@@ -1,0 +1,187 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+.nav-item a:hover{
+    background-color: #ff0000;
+    color: #ffffff !important;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.graphs{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.graphs #myChart-one,.graphs #myChart-two{
+  margin: auto;
+}
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+article .image{
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.step {
+    position: relative;
+    min-height: 1em;
+    color: gray;
+  }
+  .title {
+    line-height: 1.5em;
+    font-weight: bold;
+  }
+  .caption {
+    font-size: 0.8em;
+  }
+  .step + .step {
+    margin-top: 1.5em
+  }
+  .step > div:first-child {
+    position: static;
+    height: 0;
+  }
+  .step > div:not(:first-child) {
+    margin-left: 1.5em;
+    padding-left: 1em;
+  }
+  /* Circle */
+  .circle {
+    background: gray;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    border-radius: 100%;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 0 0 3px #fff;
+  }
+  /* Vertical Line */
+.circle:after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    top: 1px;
+    right: 50%;
+    bottom: 1px;
+    left: 50%;
+    height: 100%;
+    width: 1px;
+    transform: scale(1, 2);
+    transform-origin: 50% -100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+  }
+  .step:last-child .circle:after {
+    display: none
+  }
+  .step.step-active span{
+    color: #4285f4
+  }
+  .step.step-active .circle {
+    background-color: #4285f4;
+  }
+
+
+  #products .img-resize{
+       height: 400px;
+       width: 400px;
+       object-fit: cover;
+  }
+
+  @media screen and (max-width: 540px) {
+    .graphs,article{
+      display: flex;
+      flex-direction: column;
+    }
+    .graphs #myChart-one,.graphs #myChart-two{
+      margin: auto;
+    }
+    #products .product{
+      display: flex;
+      flex-direction: column;
+    }
+    #products .img-resize{
+      width: 100%;
+    }
+    th{
+      display: none;
+    }
+    td{
+      display: block;
+    }
+    td::before{
+      content: attr(data-cell) ": ";
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+  }
+
+
+  @media screen and (max-width: 900px) {
+    .graphs,article{
+      display: flex;
+      flex-direction: column;
+    }
+    .graphs #myChart-one,.graphs #myChart-two{
+      margin: auto;
+    }
+    th{
+      display: none;
+    }
+    td{
+      display: block;
+    }
+    td::before{
+      content: attr(data-cell) ": ";
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    #products .product{
+      display: flex;
+      flex-direction: column;
+    }
+    #products .img-resize{
+      width: 100%;
+    }
+  }
+
+
+  @media screen and (max-width: 1070px) and (min-width: 920px) {
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+      gap: 20px;
+  }
+    .graphs{
+      display: flex;
+      flex-direction: column;
+    }
+    .graphs #myChart-one,.graphs #myChart-two{
+      margin: auto;
+    }
+    article{
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar ul li {
+      font-size: .9em;
+    }
+  }
